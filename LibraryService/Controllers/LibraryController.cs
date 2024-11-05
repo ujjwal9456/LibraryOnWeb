@@ -17,7 +17,7 @@ namespace LibraryService.Controllers
 
 
         [HttpGet("{Id}")]
-        public async Task<ActionResult> GetByCode([FromRoute] int Id)
+        public async Task<ActionResult> GetById([FromRoute] int Id)
         {
             var result = await _mediator.Send(new FindLibraryByIDQuery { Id = Id});
             return new JsonResult(result);
